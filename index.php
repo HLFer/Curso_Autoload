@@ -1,8 +1,12 @@
 <?php
 
-include_once 'vendas/Usuario.php';
-include_once 'vendas/Compra.php';
-include_once 'vendas/Produto.php';
+
+use App\vendas\Usuario;
+use App\vendas\Compra;
+use App\vendas\Produto;
+use App\estoque\Estoque;
+
+require_once 'vendor/autoload.php';
 
 $usuario = new Usuario();
 $usuario->cadastrar('Henrique', 27);
@@ -24,3 +28,7 @@ $compra->cadastrar(
 );
 
 echo $compra->imprimir();
+
+$estoque = new Estoque();
+
+echo $estoque->getTotal();
